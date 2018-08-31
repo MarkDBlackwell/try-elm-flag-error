@@ -1,0 +1,12 @@
+/elm-stuff/build-artifacts/*
+/elm-stuff/packages/*
+
+/Main.js
+/index.html
+
+npm-debug.log
+
+*.stackdump
+Copy\ *
+
+!.gitkeep

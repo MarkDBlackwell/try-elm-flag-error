@@ -1,0 +1,32 @@
+#/bin/sh
+# Copyright (C) 2018 Mark D. Blackwell.
+#    All rights reserved.
+
+# Versions:
+## ALL WRONG:
+#  node 5.12.0 or 6.11.0
+#  npm 3.8.6 or 3.10.10 (comes with node)
+#  elm 0.18.0
+#  elm-format 0.7.0-exp
+#  uglify-js 3.1.7
+
+echo "Searching for trailing blanks"
+grep -nEI ' $' `find front-end -type f`
+
+(
+export PATH=$PATH:./node_modules/.bin && \
+
+NAME=Main && \
+
+DIRECTORY_SOURCE=front-end && \
+
+DIRECTORY_OUTPUT=widget && \
+
+echo "Formatting" && \
+elm-format --yes $DIRECTORY_SOURCE/ && \
+
+elm-make --warn --output=$DIRECTORY_OUTPUT/$NAME.js $DIRECTORY_SOURCE/$NAME.elm && \
+
+:) || \
+
+echo "Failed to complete"

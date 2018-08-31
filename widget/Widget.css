@@ -1,0 +1,44 @@
+/* Copyright (C) 2018 Mark D. Blackwell.
+      All rights reserved.
+*/
+
+/* Styling for try-elm-flag-error elements. */
+
+/* Override browser & user settings: */
+body,
+form,
+p {
+    margin: 0;
+}
+button {
+    border-width: .19230769em;
+    font-family: inherit;
+    font-stretch: ultra-expanded;
+}
+button:focus {
+    outline-style: dotted;
+    outline-width: .21em;
+}
+/* (End of override browser & user settings.) */
+
+:root {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    font-family: 'PT Sans Narrow', 'Arial', 'Helvetica', sans-serif;
+    font-size: 15px; /* basis for rem calculations */
+    color: White;
+    background-color: Black;
+}
+head {
+    font-size: 0;
+}
+body {
+    font-size: 0;
+}
+body > main > p {
+    line-height: 1.5;
+    font-size: 20px;
+    color: White;
+    background-color: Black;
+}
