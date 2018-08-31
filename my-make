@@ -10,22 +10,27 @@
 #  elm-format 0.7.0-exp
 #  uglify-js 3.1.7
 
-echo "Searching for trailing blanks"
-grep -nEI ' $' `find front-end -type f`
+(
+DIRECTORY_SOURCE=src && \
+
+echo "Searching for trailing blanks" && \
+grep -nEI ' $' `find $DIRECTORY_SOURCE -type f`
+)
 
 (
 export PATH=$PATH:./node_modules/.bin && \
 
 NAME=Main && \
 
-DIRECTORY_SOURCE=front-end && \
+DIRECTORY_SOURCE=src && \
 
 DIRECTORY_OUTPUT=widget && \
 
 echo "Formatting" && \
 elm-format --yes $DIRECTORY_SOURCE/ && \
 
-elm-make --warn --output=$DIRECTORY_OUTPUT/$NAME.js $DIRECTORY_SOURCE/$NAME.elm && \
+# elm make --warn --output=$DIRECTORY_OUTPUT/$NAME.js $DIRECTORY_SOURCE/$NAME.elm && \
+elm make --output=$DIRECTORY_OUTPUT/$NAME.js $DIRECTORY_SOURCE/$NAME.elm && \
 
 :) || \
 

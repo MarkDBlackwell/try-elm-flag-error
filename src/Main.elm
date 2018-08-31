@@ -8,14 +8,14 @@ module Main
         ( main
         )
 
+import Browser
+    exposing
+        ( element
+        )
 import ElmCycle
     exposing
         ( ElmCycle
         , Msg
-        )
-import Html
-    exposing
-        ( programWithFlags
         )
 import ModelInitialize
     exposing
@@ -45,7 +45,7 @@ import View
 
 main : Program Flags Model Msg
 main =
-    programWithFlags
+    Browser.element
         { init = init
         , subscriptions = subscriptions
         , update = update

@@ -1,5 +1,6 @@
-/elm-stuff/build-artifacts/*
-/elm-stuff/packages/*
+/elm-stuff/0.19.0/*
+/elm-stuff-old/*
+/widget/Main.js
 
 /Main.js
 /index.html

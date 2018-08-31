@@ -36,9 +36,13 @@ head {
 body {
     font-size: 0;
 }
-body > main > p {
-    line-height: 1.5;
+p.requirements {
+    text-align: center;
+}
+p.requirements,
+p.requirements > span {
+    line-height: 1.9;
     font-size: 20px;
-    color: White;
-    background-color: Black;
+    color: Black;
+    background-color: White;
 }

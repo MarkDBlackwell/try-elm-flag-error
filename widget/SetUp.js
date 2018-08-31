@@ -15,25 +15,32 @@ Invokable Function Expression).
     functionDealWithElm = function() {
         var functionAttachNode;
         var functionDoNothing;
-        var functionFlagString;
+        var functionFlagsAsString;
 
         functionAttachNode = function() {
             var node;
 
             node = document.getElementById('main');
-            return Elm.Main.embed(node, {
-                flagExample: functionFlagString()
+            return Elm.Main.init({
+                node: node,
+                flags: {
+                    flagExample: functionFlagsAsString()
+                }
             });
         };
         functionDoNothing = function(app) {
             return null;
         };
-        functionFlagString = function() {
+        functionFlagsAsString = function() {
             var flagsAsString;
             var flagsAsJson;
 
+/*
+Change this value, per:
+    Good: a, Bad: b:
+*/
             flagsAsJson = {
-                b: "0"
+                a: "0"
             };
             flagsAsString = JSON.stringify(flagsAsJson);
 

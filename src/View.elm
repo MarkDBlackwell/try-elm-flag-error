@@ -17,7 +17,12 @@ import Html
         ( Html
         , main_
         , p
+        , span
         , text
+        )
+import Html.Attributes
+    exposing
+        ( class
         )
 import ModelType
     exposing
@@ -36,7 +41,12 @@ view : Model -> Html Msg
 view model =
     main_
         attributesEmpty
-        [ p attributesEmpty
-            [ text "normal"
+        [ p
+            [ class "requirements"
+            ]
+            [ span
+                attributesEmpty
+                [ text "normal"
+                ]
             ]
         ]
