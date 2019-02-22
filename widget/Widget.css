@@ -43,6 +43,6 @@ p.requirements,
 p.requirements > span {
     line-height: 1.9;
     font-size: 20px;
-    color: Black;
-    background-color: White;
+    background-color: rgb(255,255,0);
+    color: rgb(230,0,140);
 }
